@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from '../utils/BooksAPI'
 import './App.css'
 
-import MyBookshelf from './views/MyBookshelf'
-import SearchPage from './views/SearchPage'
+import MyBookshelf from '../views/MyBookshelf'
+import SearchPage from '../views/SearchPage'
 
-class BooksApp extends React.Component {
+export default class BooksApp extends React.Component {
   state = { books: [] }
 
   componentDidMount() {
@@ -37,5 +37,3 @@ class BooksApp extends React.Component {
     )
   }
 }
-
-export default BooksApp

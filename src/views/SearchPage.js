@@ -2,8 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import sortBy from 'sort-by';
 
-import * as BooksAPI from '../BooksAPI';
-import Bookshelf from '../Bookshelf';
+import * as BooksAPI from '../utils/BooksAPI';
+import Bookshelf from '../components/Bookshelf';
 
 export default class SearchPage extends React.Component {
     state = {
