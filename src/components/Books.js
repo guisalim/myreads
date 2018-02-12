@@ -2,7 +2,7 @@ import React from 'react';
 
 const Books = (props) => {
     const { onShelfChange, book } = props
-    const { imageLinks, title, authors, shelf } = props.book
+    const { imageLinks, title, authors, shelf, averageRating, ratingsCount } = props.book
     return (
         <li>
             <div className="book">
@@ -23,7 +23,12 @@ const Books = (props) => {
                     </div>
                 </div>
                 <div className="book-title">{title}</div>
-                <div className="book-authors">{authors}</div>
+                {
+                    authors && authors.map((author, index) => <div key={index} className="book-authors">* {author}</div>)
+                }
+                {
+                    ratingsCount && <div className="book-rating">Rating: {averageRating} ({ratingsCount})</div>
+                }
             </div>
         </li>
     )

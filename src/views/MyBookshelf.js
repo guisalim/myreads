@@ -15,15 +15,15 @@ const MyBookshelf = (props) => {
                 <div>
                     <Bookshelf
                         header='Currently Reading'
-                        list={books.filter(book => book.shelf === 'currentlyReading')}
+                        books={books.filter(book => book.shelf === 'currentlyReading')}
                         onShelfChange={onShelfChange} />
                     <Bookshelf
                         header='Want to Read'
-                        list={books.filter(book => book.shelf === 'wantToRead')}
+                        books={books.filter(book => book.shelf === 'wantToRead')}
                         onShelfChange={onShelfChange} />
                     <Bookshelf
                         header='Read'
-                        list={books.filter(book => book.shelf === 'read')}
+                        books={books.filter(book => book.shelf === 'read')}
                         onShelfChange={onShelfChange} />
                 </div>
             </div>
