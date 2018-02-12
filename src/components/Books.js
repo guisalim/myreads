@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Books = (props) => {
-    const { onShelfChange } = props
+    const { onShelfChange, book } = props
     const { imageLinks, title, authors, shelf } = props.book
     return (
         <li>
@@ -13,7 +13,7 @@ const Books = (props) => {
                     <div className="book-shelf-changer">
                         <select
                             defaultValue={shelf ? shelf : 'none'}
-                            onChange={(e) => onShelfChange(this.props.book, e.target.value)}>
+                            onChange={(e) => onShelfChange(book, e.target.value)}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead"> Want to Read</option>
