@@ -1,18 +1,29 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Books = (props) => {
-    const { onShelfChange, book } = props
-    const { imageLinks, title, authors, shelf, averageRating, ratingsCount } = props.book
+    const { onShelfChange, book, myBooks } = props
+    const { imageLinks, title, shelf, authors, averageRating, ratingsCount } = props.book
+
+    const shelfValue = (book, myBooks) => {
+        const bookFound = myBooks.find(b => b.id === book.id);
+        if (bookFound) {
+            return bookFound.shelf;
+        } else {
+            return 'none'
+        }
+    }
+
     return (
         <li>
             <div className="book">
                 <div className="book-top">
                     <div className="book-cover"
-                        style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks.smallThumbnail})` }}>
+                        style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks.thumbnail})` }}>
                     </div>
                     <div className="book-shelf-changer">
                         <select
-                            defaultValue={shelf ? shelf : 'none'}
+                            defaultValue={shelf ? shelf : shelfValue(book, myBooks)}
                             onChange={(e) => onShelfChange(book, e.target.value)}>
                             <option value="none" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
@@ -32,6 +43,12 @@ const Books = (props) => {
             </div>
         </li>
     )
+}
+
+Books.propTypes = {
+    onShelfChange: PropTypes.func.isRequired,
+    book: PropTypes.object.isRequired,
+    myBooks: PropTypes.array
 }
 
 export default Books

@@ -1,12 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { debounce } from 'lodash';
-import sortBy from 'sort-by';
+import React from 'react'
+import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { debounce } from 'lodash'
+import sortBy from 'sort-by'
 
-import * as BooksAPI from '../utils/BooksAPI';
-import Bookshelf from '../components/Bookshelf';
+import * as BooksAPI from '../utils/BooksAPI'
+import Bookshelf from '../components/Bookshelf'
 
 export default class SearchPage extends React.Component {
+    static propTypes = {
+        onShelfChange: PropTypes.func.isRequired,
+        myBooks: PropTypes.array.isRequired
+    }
+
     state = {
         books: [],
         isLoading: false,
@@ -14,7 +20,7 @@ export default class SearchPage extends React.Component {
     }
 
     handleChange(query) {
-        this.setState({ query: query.trim() })
+        this.setState({ query: query})
         query === '' ?
             this.setState({ books: [] }) :
             this.searchBooks(query)
@@ -35,7 +41,7 @@ export default class SearchPage extends React.Component {
 
     render() {
         const { query, books, isLoading } = this.state
-        const { onShelfChange } = this.props
+        const { onShelfChange, myBooks } = this.props
         return (
             <div className="search-books">
                 <div className="search-books-bar">
@@ -53,9 +59,9 @@ export default class SearchPage extends React.Component {
                 <div className="search-books-results">
                     <ol className="books-grid">
                         {
-                            isLoading ? 
-                            <p>Searching...</p> :
-                            <Bookshelf books={books} onShelfChange={onShelfChange} />
+                            isLoading
+                                ? <p>Searching...</p>
+                                : <Bookshelf books={books} onShelfChange={onShelfChange} myBooks={myBooks} />
                         }
                     </ol>
                 </div>

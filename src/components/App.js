@@ -31,7 +31,7 @@ export default class BooksApp extends React.Component {
         )} />
 
         <Route path='/Search' render={() => (
-          <SearchPage onShelfChange={this.shelfChange} />
+          <SearchPage onShelfChange={this.shelfChange} myBooks={this.state.books} />
         )} />
       </div>
     )
