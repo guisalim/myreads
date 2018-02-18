@@ -15,6 +15,7 @@ export default class SearchPage extends React.Component {
 
     state = {
         books: [],
+        header: '',
         isLoading: false,
         query: ''
     }
@@ -33,21 +34,24 @@ export default class SearchPage extends React.Component {
             .search(query)
             .then(books => {
                 (!books || books.error) ?
-                    this.setState({ books: [] }) :
-                    this.setState({ books: books.sort(sortBy('title')) })
+                    this.setState({ books: [], header: 'No books found...' }) :
+                    this.setState({ books: books.sort(sortBy('title')), header: `${books.length} books were found...` })
             })
         this.setState({ isLoading: false })
     }, 300)
 
     render() {
-        const { query, books, isLoading } = this.state
-        const { onShelfChange, myBooks } = this.props
+        const { query, books, isLoading, header } = this.state
+        const { onShelfChange, myBooks, bookDetails } = this.props
         return (
             <div className="search-books">
                 <div className="search-books-bar">
                     <Link
                         className="close-search"
-                        to="/">Close</Link>
+                        to="/">
+                        Close
+                    </Link>
+                    
                     <div className="search-books-input-wrapper">
                         <input
                             type="text" value={query}
@@ -61,7 +65,12 @@ export default class SearchPage extends React.Component {
                         {
                             isLoading
                                 ? <p>Searching...</p>
-                                : <Bookshelf books={books} onShelfChange={onShelfChange} myBooks={myBooks} />
+                                : <Bookshelf 
+                                    header={header} 
+                                    books={books}
+                                    myBooks={myBooks} 
+                                    onShelfChange={onShelfChange}
+                                    bookDetails={bookDetails} />
                         }
                     </ol>
                 </div>

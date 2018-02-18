@@ -6,7 +6,7 @@ import Bookshelf from '../components/Bookshelf'
 
 
 const MyBookshelf = (props) => {
-    const { books, onShelfChange } = props
+    const { books, onShelfChange, bookDetails } = props
     return (
         <div className="list-books">
             <div className="list-books-title">
@@ -17,15 +17,18 @@ const MyBookshelf = (props) => {
                     <Bookshelf
                         header='Currently Reading'
                         books={books.filter(book => book.shelf === 'currentlyReading')}
-                        onShelfChange={onShelfChange} />
+                        onShelfChange={onShelfChange}
+                        bookDetails={bookDetails} />
                     <Bookshelf
                         header='Want to Read'
                         books={books.filter(book => book.shelf === 'wantToRead')}
-                        onShelfChange={onShelfChange} />
+                        onShelfChange={onShelfChange}
+                        bookDetails={bookDetails} />
                     <Bookshelf
                         header='Read'
                         books={books.filter(book => book.shelf === 'read')}
-                        onShelfChange={onShelfChange} />
+                        onShelfChange={onShelfChange}
+                        bookDetails={bookDetails} />
                 </div>
             </div>
             <div className="open-search">

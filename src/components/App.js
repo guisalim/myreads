@@ -5,9 +5,14 @@ import './App.css'
 
 import MyBookshelf from '../views/MyBookshelf'
 import SearchPage from '../views/SearchPage'
+import BookDetails from './BookDetails'
 
 export default class BooksApp extends React.Component {
-  state = { books: [] }
+  state = {
+    books: [],
+    showDetails: false,
+    bookDetails: {}
+  }
 
   componentDidMount() {
     BooksAPI.getAll().then(books => { this.setState({ books }) })
@@ -23,15 +28,23 @@ export default class BooksApp extends React.Component {
       })
   }
 
+  openBookDetails = (book) => {
+    this.setState({ showDetails: true, bookDetails: book })
+  }
+  closeBookDetails = () => this.setState({ showDetails: false })
+
   render() {
     return (
       <div className="app">
+
+        {this.state.showDetails && <BookDetails open={this.state.showDetails} onClose={this.closeBookDetails} book={this.state.bookDetails} />}
+
         <Route exact path='/' render={() => (
-          <MyBookshelf onShelfChange={this.shelfChange} books={this.state.books} />
+          <MyBookshelf onShelfChange={this.shelfChange} books={this.state.books} bookDetails={this.openBookDetails} />
         )} />
 
         <Route path='/Search' render={() => (
-          <SearchPage onShelfChange={this.shelfChange} myBooks={this.state.books} />
+          <SearchPage onShelfChange={this.shelfChange} myBooks={this.state.books} bookDetails={this.openBookDetails} />
         )} />
       </div>
     )

@@ -5,7 +5,7 @@ import sortBy from 'sort-by'
 import Books from './Books'
 
 const Bookshelf = (props) => {
-  const { books, header, onShelfChange, myBooks } = props
+  const { books, header, onShelfChange, myBooks, bookDetails } = props
   const bookList = books.sort(sortBy('title'))
   return (
     <div className="bookshelf">
@@ -17,7 +17,8 @@ const Bookshelf = (props) => {
               key={book.id}
               book={book}
               onShelfChange={onShelfChange}
-              myBooks={myBooks} />
+              myBooks={myBooks}
+              bookDetails={bookDetails} />
           ))}
         </ol>
       </div>

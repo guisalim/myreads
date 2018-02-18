@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Books = (props) => {
-    const { onShelfChange, book, myBooks } = props
+    const { onShelfChange, book, myBooks, bookDetails } = props
     const { imageLinks, title, shelf, authors, averageRating, ratingsCount } = props.book
 
     const shelfValue = (book, myBooks) => {
@@ -18,7 +18,7 @@ const Books = (props) => {
         <li>
             <div className="book">
                 <div className="book-top">
-                    <div className="book-cover"
+                    <div className="book-cover" onClick={(e) => bookDetails(book)}
                         style={{ width: 128, height: 193, backgroundImage: `url(${imageLinks.thumbnail})` }}>
                     </div>
                     <div className="book-shelf-changer">
