@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 const Books = (props) => {
     const { onShelfChange, book, myBooks, bookDetails } = props
-    const { imageLinks, title, shelf, authors, averageRating, ratingsCount } = props.book
+    const { imageLinks, title, subtitle, shelf, authors, averageRating, ratingsCount } = props.book
 
     const shelfValue = (book, myBooks) => {
         const bookFound = myBooks.find(b => b.id === book.id);
@@ -33,7 +33,7 @@ const Books = (props) => {
                         </select>
                     </div>
                 </div>
-                <div className="book-title">{title}</div>
+                <div className="book-title">{title}{subtitle && subtitle}</div>
                 {
                     authors && authors.map((author, index) => <div key={index} className="book-authors">* {author}</div>)
                 }
