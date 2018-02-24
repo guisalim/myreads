@@ -28,9 +28,8 @@ const BookDetails = props => {
                 <Container>
                     <Modal.Description>
                         <Header as='h3'>
-                            {title}
+                            {title}{subtitle && ` - ${subtitle}`}
                             <Header.Subheader>
-                                {subtitle}
                                 <p><Icon name='users' size='small' />{authors.map(author => `${author}; `)}</p>
                             </Header.Subheader>
                         </Header>

@@ -33,7 +33,7 @@ const Books = (props) => {
                         </select>
                     </div>
                 </div>
-                <div className="book-title">{title}{subtitle && subtitle}</div>
+                <div className="book-title">{title}{subtitle && ` - ${subtitle}`}</div>
                 {
                     authors && authors.map((author, index) => <div key={index} className="book-authors">* {author}</div>)
                 }
