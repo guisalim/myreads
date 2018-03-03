@@ -1,9 +1,9 @@
 # MyReads
----
-
 This project was built for the Udacity React Nanodegree Program. 
 It is a bookshelf app that lets you to organize books that you have read.
 The purpose of this project is to demonstrate understanding of the basics of a React-based app without Redux.
+
+
 ## Getting Started
 ### Prerequisites:
 MyReads requires:
@@ -63,8 +63,8 @@ You can search for books usingone of the terms below
 - Next Steps:
   * More test cases using Jest/Enzyme
 
----
+## License 
 This project is licensed under the terms of the MIT license.
 
---- 
-If you have any question, send me a PM...
+## Contribution
+Fell free to send suggestion or pull requests to improve this project.
