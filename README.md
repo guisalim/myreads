@@ -12,11 +12,11 @@ MyReads requires:
 node -v
 ```
 * NPM or Yarn
-NPM is a package manager installed with Node.js, so if you have Node.js installed, then you should also got NPM. You can check you NPM version using the following command:
+  * NPM is a package manager installed with Node.js, so if you have Node.js installed, then you should also got NPM. You can check you NPM version using the following command:
 ```
 npm -v
 ```
-You can use Yarn as a substitute to NPM. Yarn is a package manager built by Facebook, Google, Exponential, and Tilde. It is said to be safer and faster then NPM.
+  * You can use Yarn as a substitute to NPM. Yarn is a package manager built by Facebook, Google, Exponential, and Tilde. It is said to be safer and faster then NPM.
 You can download it on [yarnpkg.com](https://yarnpkg.com/en/docs/install). On the other hand, if you have it installed, you can check Yarn's version using the following command:
 ```
 yarn version
@@ -49,7 +49,6 @@ This project was build from scratch using the [create-react-app](https://github.
 
 - Packages included
 This project include a few packages to support a better developement:
-* 
   * [Semantic-UI](https://react.semantic-ui.com/)
   * [lodash](https://lodash.com/)
   * [Prop-Types](https://github.com/facebook/prop-types)
@@ -64,7 +63,6 @@ You can search for books usingone of the terms below
 ```
 
 - Next Steps:
-* 
   * More test cases using Jest/Enzyme
 
 ---
