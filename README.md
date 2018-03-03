@@ -1,12 +1,11 @@
 # MyReads
 ---
 
-## Project Goal:
 This project was built for the Udacity React Nanodegree Program. 
 It is a bookshelf app that lets you to organize books that you have read.
 The purpose of this project is to demonstrate understanding of the basics of a React-based app without Redux.
-
-## Requirements:
+## Getting Started
+### Prerequisites:
 MyReads requires:
 * [Node.js](https://nodejs.org/en/download/) - a javascript runtime built using Chrome's V8 Javascript Engine. MyReads' project requires at least version 6+. You can check if you have Node.js using the following command on your terminal or download it using the previous link:
 ```
@@ -23,7 +22,7 @@ You can download it on [yarnpkg.com](https://yarnpkg.com/en/docs/install). On th
 yarn version
 ```
 
-## Let's run it
+### Installing - Let's run it
 You should download, install and run this repo using the following commands:
 
 - If you're using NPM
@@ -41,18 +40,22 @@ yarn start
 
 It will run locally on PORT 3000 and can be checked on your browser at ```http://localhost:3000```
 
+### Tests
+The automated tests can be run using the following script ```npm test```
+
 ## Acknowledgements
 - MyReads Development
 This project was build from scratch using the [create-react-app](https://github.com/facebook/create-react-app) boilerplate and imported a few files offered by Udacity Team on its [Starter Code for the React MyReads Project](https://github.com/udacity/reactnd-project-myreads-starter)
 
 - Packages included
 This project include a few packages to support a better developement:
-* * [Semantic-UI](https://react.semantic-ui.com/)
-* * [lodash](https://lodash.com/)
-* * [Prop-Types](https://github.com/facebook/prop-types)
-* * [Enzyme](http://airbnb.io/enzyme/)
-* * [Sort-By](https://github.com/kvnneff/sort-by)
-* * [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
+* 
+  * [Semantic-UI](https://react.semantic-ui.com/)
+  * [lodash](https://lodash.com/)
+  * [Prop-Types](https://github.com/facebook/prop-types)
+  * [Enzyme](http://airbnb.io/enzyme/)
+  * [Sort-By](https://github.com/kvnneff/sort-by)
+  * [React-Router](https://reacttraining.com/react-router/web/guides/philosophy)
 
 - Search Terms
 You can search for books usingone of the terms below
@@ -61,6 +64,11 @@ You can search for books usingone of the terms below
 ```
 
 - Next Steps:
-* * Tests using Jest/Enzyme
+* 
+  * More test cases using Jest/Enzyme
 
+---
+This project is licensed under the terms of the MIT license.
+
+--- 
 If you have any question, send me a PM...
