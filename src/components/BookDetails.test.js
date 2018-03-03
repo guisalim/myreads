@@ -55,7 +55,7 @@ const bookTest = {
 describe('BookDetails Component', () => {
 
     // make our assertion and what we expect to happen 
-    it('should render without throwing an error', () => {
+    it('should render a modal without throwing an error', () => {
         const wrapper = shallow(<BookDetails book={bookTest} open={true} onClose={() => true} />)
         console.log(wrapper.debug())
         expect(wrapper.contains(<b>Description: </b>)).toBe(true)
